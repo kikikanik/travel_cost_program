@@ -45,7 +45,7 @@ public class travel_cost_program_CS175_code {
 			}
 		}
 		else {
-			System.out.print("Input not accepted. Please enter (Sedan), (SUV), or (Truck) for mode of travel.");
+			System.out.print("Input not accepted. Please enter (Sedan), (SUV), or (Truck) for mode of travel. Please restart Program.");
 		}
 		in.close(); // must close Scanner
 	}
