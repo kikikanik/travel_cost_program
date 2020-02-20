@@ -1,0 +1,47 @@
+import java.util.Scanner ; //import Scanner 
+public class travel_cost_program_CS175_code {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner (System.in);
+		//declare constants same as flow chart for clarity 
+		double distance_Entered = 0.0 ; //user input 
+		double fuel_Efficacy_SUV = 20; //given 
+		double cost_Per_Gallon_SUV = 2.90; //given 
+		double fuel_Efficacy_Sedan = 30; //given
+		double cost_Per_Gallon_Sedan= 2.50; //given 
+		double fuel_Efficacy_Truck = 24; //according to www.car.com
+		double cost_Per_Gallon_Truck = 2.93; //made up 
+		
+		//while loop
+		int keep_Going = 1;
+		while (keep_Going != 0) {
+			
+		System.out.print("Please enter expected distance that will be travelled: ");
+		if (in.hasNextDouble()) {
+			distance_Entered = in.nextDouble();
+		}
+		else {
+			System.out.println("Incorrect Input. Please restart program and enter only numerical values next time.");
+			break;
+		}
+		System.out.print("Will you be driving a (Sedan), (SUV), or (Truck)? ");
+		String mode_of_Travel = in.next();
+		switch (mode_of_Travel) {
+		case "SUV":
+			System.out.println("Your total cost of travel: $" + String.format("%.2f",(distance_Entered / fuel_Efficacy_SUV) * cost_Per_Gallon_SUV));
+			break;
+		case "Sedan":
+			System.out.println("Your total cost of travel: $" + String.format("%.2f",(distance_Entered / fuel_Efficacy_Sedan) * cost_Per_Gallon_Sedan));
+			break;
+		case "Truck": 
+			System.out.println("Your total cost of travel: $" + String.format("%.2f",(distance_Entered / fuel_Efficacy_Truck) * cost_Per_Gallon_Truck));
+			break;
+		default:
+			System.out.print("Incorrect input. Please restart program.");
+			break;
+		}
+		keep_Going = 0;
+		}
+		in.close(); // must close Scanner
+	}
+}
